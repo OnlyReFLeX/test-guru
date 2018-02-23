@@ -62,3 +62,8 @@ User.create([
   { login: 'user1', password: 'password1' },
   { login: 'user2', password: 'password2' }
 ])
+
+UsersTest.create([
+  { user_id: 1, test_id: 2 },
+  { user_id: 1, test_id: 3 }
+])
