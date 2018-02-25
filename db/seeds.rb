@@ -6,15 +6,20 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+users = User.create([
+  { login: 'user1', password: 'password1' },
+  { login: 'user2', password: 'password2' }
+])
+
 categories = Category.create([
   { title: 'Математика' },
   { title: 'Информатика' }
 ])
 
 tests = Test.create([
-  { title: 'Вычитание', level: 1, category_id: categories[0].id },
-  { title: 'Сложение', category_id: categories[0].id },
-  { title: 'Части компьютера', level: 2, category_id: categories[1].id }
+  { title: 'Вычитание', level: 1, category_id: categories[0].id, author_id: users[0].id },
+  { title: 'Сложение', category_id: categories[0].id, author_id: users[0].id },
+  { title: 'Части компьютера', level: 2, category_id: categories[1].id, author_id: users[1].id }
 ])
 
 questions = Question.create([
@@ -58,12 +63,7 @@ Answer.create([
   { body: 'Блок питания', question_id: questions[5].id }
 ])
 
-users = User.create([
-  { login: 'user1', password: 'password1' },
-  { login: 'user2', password: 'password2' }
-])
-
-UsersTest.create([
-  { user_id: users[0], test_id: tests[1] },
-  { user_id: users[0], test_id: tests[2] }
+TestsUser.create([
+  { user_id: users[0].id, test_id: tests[1].id },
+  { user_id: users[0].id, test_id: tests[2].id }
 ])
