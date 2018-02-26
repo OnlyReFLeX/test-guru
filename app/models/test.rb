@@ -9,7 +9,7 @@ class Test < ApplicationRecord
   scope :level_easy, -> { level(0..1) }
   scope :level_medium, -> { level(2..4) }
   scope :level_hard, -> { level(5..Float::INFINITY) }
-  scope :category_by_title, lambda(title) {
+  scope :category_by_title, lambda { |title|
     Test.joins('JOIN categories ON tests.category_id = categories.id')
         .where(categories: { title: title })
         .order(title: :DESC)
