@@ -10,7 +10,19 @@ class QuestionsController < ApplicationController
     render inline: @question.body
   end
 
+  def new
+  end
+
+  def create
+    question = Question.create(body: question_params[:body], test_id: params[:test_id])
+    render inline: @question.body
+  end
+
   private
+
+  def question_params
+    params.require(:question).permit(:body)
+  end
 
   def find_question
     @question = Question.find(params[:id])
