@@ -18,6 +18,10 @@ class QuestionsController < ApplicationController
     render inline: @question.body
   end
 
+  def destroy
+    @question.destroy
+  end
+
   private
 
   def question_params
