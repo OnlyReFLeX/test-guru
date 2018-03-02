@@ -1,23 +1,38 @@
 class QuestionsController < ApplicationController
-  before_action :find_question, only: %i[show destroy]
-  before_action :find_test, only: %i[index create]
+  before_action :find_question, only: %i[show destroy edit update]
+  before_action :find_test, only: %i[index create new]
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
   def index
     @questions = @test.questions
-    render inline:  "<% @questions.each do |q| %><p><%= q.body %></p><% end %>"
   end
 
   def show
-    render plain: @question.body
   end
 
   def new
+    @question = @test.questions.build
+  end
+
+  def edit
+  end
+
+  def update
+    if @question.update(question_params)
+      redirect_to @question
+    else
+      render :edit
+    end
   end
 
   def create
-    question = @test.questions.create(question_params)
-    render plain: question.body
+    @question = @test.questions.build(question_params)
+
+    if @question.save
+      redirect_to @question
+    else
+      render :new
+    end
   end
 
   def destroy

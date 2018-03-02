@@ -1,0 +1,9 @@
+<h2>Тест <%= @test.title %> (вопросов <%= @test.questions.count %>)</h2>
+<%= link_to 'Новый вопрос', new_test_question_path(@test) %>
+<table>
+  <tr>
+    <th>Вопрос</th>
+    <th colspan="3">Действия</th>
+  </tr>
+  <%= render @questions %>
+</table>
