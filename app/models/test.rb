@@ -8,8 +8,8 @@ class Test < ApplicationRecord
   belongs_to :category
   belongs_to :author, class_name: 'User'
   has_many :questions
-  has_many :tests_user
-  has_many :users, through: :tests_user
+  has_many :tests_users
+  has_many :users, through: :tests_users
 
   scope :level, ->(level) { where(level: level) }
   scope :level_easy, -> { level(0..1) }
