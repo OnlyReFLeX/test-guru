@@ -4,7 +4,7 @@ class QuestionsController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
 
   def index
-    @questions = Question.where(test_id: @test_id)
+    @questions = @test.questions
     render inline:  "<% @questions.each do |q| %><p><%= q.body %></p><% end %>"
   end
 
@@ -16,12 +16,13 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    question = Question.create(body: question_params[:body], test_id: @test_id)
+    question = @test.questions.create(question_params)
     render plain: question.body
   end
 
   def destroy
     @question.destroy
+    render plain: 'Вопрос успешно удален'
   end
 
   private
@@ -31,7 +32,7 @@ class QuestionsController < ApplicationController
   end
 
   def find_test
-    @test_id = params[:test_id]
+    @test = Test.find(params[:test_id])
   end
 
   def find_question
