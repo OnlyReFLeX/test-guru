@@ -10,10 +10,6 @@
 
   <body>
     <%= yield %>
-    <footer>
-      <p><%= current_year %> | Osman | <%= github_url('OnlyReFLeX', 'test-guru') %></p>
-      <p>Проект прохождения тестов</p>
-      <p><%= link_to 'Учебный проект в онлайн-школе Thinknetica', 'http://thinknetica.com/' %></p>
-    </footer>
+    <%= render 'layouts/footer' %>
   </body>
 </html>
