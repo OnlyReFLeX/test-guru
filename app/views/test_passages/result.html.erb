@@ -1,1 +1,11 @@
 <h1>Тест <%= @test_passage.test.title %> завершен</h1>
+
+<h2>Вы ответили на <%= result_procent_color(@test_passage.result_procent) %> вопросов правильно</h2>
+
+<% if @test_passage.test_passed?  %>
+  <h2 style='color: green'>Тест пройден</h2>
+<% else %>
+  <h2 style='color: red'>Тест провален</h2>
+<% end %>
+
+<span color='red'></span>

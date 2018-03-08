@@ -6,6 +6,13 @@ class TestPassage < ApplicationRecord
   before_validation :before_validation_set_frist_question, on: :create
   before_update :before_update_set_next_question
 
+  def test_passed?
+    result_procent >= 85
+  end
+
+  def result_procent
+    (100 * self.correct_questions) / test.questions.count
+  end
 
   def completed?
     current_question.nil?
