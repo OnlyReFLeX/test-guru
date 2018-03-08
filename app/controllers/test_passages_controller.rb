@@ -11,8 +11,4 @@ class TestPassagesController < ApplicationController
   def update
 
   end
-
-  def start
-
-  end
 end

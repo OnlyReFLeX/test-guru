@@ -63,7 +63,7 @@ Answer.create([
   { body: 'Блок питания', question_id: questions[5].id }
 ])
 
-TestsUser.create([
+TestPassage.create([
   { user_id: users[0].id, test_id: tests[1].id },
   { user_id: users[0].id, test_id: tests[2].id }
 ])
