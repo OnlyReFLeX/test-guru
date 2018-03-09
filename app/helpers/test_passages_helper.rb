@@ -1,9 +1,9 @@
 module TestPassagesHelper
-  def result_procent_color(procent)
+  def result_percent_color(percent)
     if @test_passage.test_passed?
-      "<span style='color: green'>#{procent}%</span>".html_safe
+      "<span style='color: green'>#{percent}%</span>".html_safe
     else
-      "<span style='color: red'>#{procent}%</span>".html_safe
+      "<span style='color: red'>#{percent}%</span>".html_safe
     end
   end
 end
