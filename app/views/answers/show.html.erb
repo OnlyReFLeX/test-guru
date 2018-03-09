@@ -1,0 +1,12 @@
+<h2>Вопрос к тесту <%= @answer.question.body %></h2>
+
+<p>
+  Ответ: <%= @answer.body %>
+</p>
+
+<p>
+  Правильный: <%= @answer.correct %>
+</p>
+
+<%= link_to 'Редактировать', edit_answer_path(@answer) %> |
+<%= link_to 'Назад', question_path(@answer.question) %>
