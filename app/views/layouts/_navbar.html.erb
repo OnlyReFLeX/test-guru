@@ -1,7 +1,7 @@
 <%= link_to 'Все тесты', tests_path %> <br>
 
 <% if logged_in? %>
-  <p>Добро пожаловать <%= current_user.email %> в Guru | <%= link_to 'Выйти', logout_path, method: :delete %></p>
+  <p>Добро пожаловать <%= current_user.email %> в <%= link_to 'Guru', root_path %> | <%= link_to 'Выйти', logout_path, method: :delete %></p>
 <% else %>
   <%= link_to 'Регистрация' , signup_path %> |
   <%= link_to 'Войти', login_path %>
