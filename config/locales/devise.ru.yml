@@ -47,6 +47,7 @@ ru:
       updated: "Ваша учётная запись изменена."
     sessions:
       signed_in: "Вход в систему выполнен."
+      signed_in_hello: "Привет, %{fullname}."
       signed_out: "Выход из системы выполнен."
       already_signed_out: "Выход из системы выполнен."
     unlocks:
