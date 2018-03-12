@@ -35,6 +35,7 @@ class AddDeviseToUsers < ActiveRecord::Migration[5.1]
 
       t.string :first_name, null: false, default: ""
       t.string :last_name, null: false, default: ""
+      t.string :type, null: false, default: 'User'
 
       # Uncomment below if timestamps were not included in your original model.
       # t.timestamps null: false
@@ -43,6 +44,7 @@ class AddDeviseToUsers < ActiveRecord::Migration[5.1]
     remove_column(:users, :password_digest)
     change_column_default(:users, :email, '')
 
+    add_index :users, :type
     add_index :users, :email,                unique: true
     add_index :users, :reset_password_token, unique: true
     add_index :users, :confirmation_token,   unique: true
@@ -53,7 +55,7 @@ class AddDeviseToUsers < ActiveRecord::Migration[5.1]
     remove_columns(:users, :encrypted_password, :reset_password_token, :reset_password_sent_at,
                    :remember_created_at, :sign_in_count, :current_sign_in_at, :last_sign_in_at,
                    :current_sign_in_ip, :last_sign_in_ip, :confirmation_token, :confirmed_at,
-                   :confirmation_sent_at, :unconfirmed_email, :first_name, :last_name)
+                   :confirmation_sent_at, :unconfirmed_email, :first_name, :last_name, :type)
 
     add_column :users, :password_digest, :string
     remove_index(:users, :email)

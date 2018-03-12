@@ -1,7 +1,4 @@
 <tr>
   <td><h3><%= "Тест #{test.title}(#{test.questions.count})" %></h3></td>
-  <td><%= link_to 'Посмотреть', test_path(test) %></td>
-  <td><%= link_to 'Редактировать', edit_test_path(test) %></td>
-  <td><%= link_to 'Удалить', test_path(test), method: :delete, data: { confirm: 'Вы уверены?' } %></td>
   <td><%= button_to 'Старт', start_test_path(test) %></td>
 </tr>

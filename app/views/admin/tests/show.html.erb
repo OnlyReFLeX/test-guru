@@ -1,5 +1,5 @@
 <h2>Тест <%= @test.title %> (вопросов <%= @test.questions.count %>)</h2>
-<%= link_to 'Новый вопрос', new_test_question_path(@test) %>
+<%= link_to 'Новый вопрос', new_admin_test_question_path(@test) %>
 <table>
   <tr>
     <th>Вопрос</th>
@@ -7,5 +7,5 @@
   </tr>
   <%= render @test.questions %>
 </table>
-<%= link_to 'Назад', tests_path %>
+<%= link_to 'Назад', admin_tests_path %>
 

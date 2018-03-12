@@ -1,4 +1,4 @@
-class QuestionsController < ApplicationController
+class Admin::QuestionsController < Admin::BaseController
   before_action :find_question, only: %i[show destroy edit update]
   before_action :find_test, only: %i[create new]
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_with_question_not_found
@@ -15,7 +15,7 @@ class QuestionsController < ApplicationController
 
   def update
     if @question.update(question_params)
-      redirect_to @question
+      redirect_to [:admin, @question]
     else
       render :edit
     end
@@ -25,7 +25,7 @@ class QuestionsController < ApplicationController
     @question = @test.questions.build(question_params)
 
     if @question.save
-      redirect_to @question
+      redirect_to [:admin, @question]
     else
       render :new
     end
@@ -33,7 +33,7 @@ class QuestionsController < ApplicationController
 
   def destroy
     @question.destroy
-    render plain: 'Вопрос успешно удален'
+    redirect_to [:admin, @question.test], notice: 'Вопрос успешно удален'
   end
 
   private

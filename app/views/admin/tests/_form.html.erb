@@ -2,7 +2,7 @@
 
 <%= render 'shared/errors', resource: test %>
 
-<%= form_with model: test, local: true do |form| %>
+<%= form_with model: [:admin, test], local: true do |form| %>
   <%= form.label :title %>
   <%= form.text_field :title %><br>
 
@@ -12,4 +12,4 @@
   <%= form.submit %>
 <% end %>
 
-<%= link_to 'Назад', tests_path %>
+<%= link_to 'Назад', admin_tests_path %>
