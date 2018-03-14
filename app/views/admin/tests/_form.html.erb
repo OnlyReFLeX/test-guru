@@ -1,0 +1,15 @@
+<%= test_header(test) %>
+
+<%= render 'shared/errors', resource: test %>
+
+<%= form_with model: [:admin, test], local: true do |form| %>
+  <%= form.label :title %>
+  <%= form.text_field :title %><br>
+
+  <%= form.label :category_id %>
+  <%= form.collection_select :category_id, Category.all, :id, :title, prompt: true %><br>
+
+  <%= form.submit %>
+<% end %>
+
+<%= link_to 'Назад', admin_tests_path %>
