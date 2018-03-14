@@ -3,9 +3,10 @@ class Admin::BaseController < ApplicationController
   before_action :admin_required!
 
   layout 'admin'
+
   private
 
   def admin_required!
-    redirect_to root_path, alert: 'У вас недостаточно прав.' unless current_user.is_a?(Admin)
+    redirect_to root_path, alert: 'У вас недостаточно прав.' unless admin?
   end
 end
