@@ -1,33 +1,99 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  show: 'Show'
+  edit: 'Edit'
+  delete: 'Delete'
+  sure?: 'Are you sure?'
+  back: 'Back'
+  exit: 'Exit'
+  sign_up: 'Sign up'
+  login: 'Sign in'
+  layouts:
+    footer:
+      info: 'Test project'
+      school_info: 'Educational project in online-school Thinknetica'
+    navbar:
+      all_tests: 'All tests'
+      welcome_in: 'Welcome %{name} in'
+    admin:
+      html_title: 'Admin Panel'
+  activerecord:
+    models:
+      answer: 'Answer'
+      question: 'question'
+      test: 'Test'
+    attributes:
+      answer:
+        body: 'Answer'
+        correct: 'Correct'
+      question:
+        body: 'Question'
+      test:
+        title: 'Name'
+        category_id: 'Category'
+      user:
+        email: 'Email'
+        password: 'Password'
+        remember_me: 'Remember me'
+  admin:
+    navbar:
+      all_tests: 'All tests'
+      welcome_in: 'Welcome %{name} in'
+    answers:
+      show:
+        correct: 'Correct'
+        answer: 'Answer'
+        header: 'Answer for question %{body}'
+      new:
+        header: 'New answer'
+      edit:
+        header: 'Edit answer'
+    questions:
+      form:
+        header_new: 'Creating a new question for the test %{title}'
+        header_edit: 'Edit question for the test%{title}'
+      show:
+        header: 'Questions for test %{title}'
+        answers: 'Answers'
+        new_answer: 'New answer'
+    tests:
+      form:
+        create_test: 'Create new test'
+        edit_test: 'Edit test'
+      test:
+        test_title: 'Test %{title}'
+      index:
+        all_tests: 'All tests'
+        new_test: 'New test'
+        test: 'Test'
+        questions: 'Questions'
+        author: 'Author'
+        actions: 'Actions'
+      show:
+        new_question: 'New question'
+        question: 'question'
+        actions: 'Actions'
+        header: 'Test %{title} (questions %{count_q})'
+  shared:
+    errors:
+      header:
+        one: 'Error %{count} detected'
+        other: 'Errors %{count} detected'
+  test_passages:
+    result:
+      completed_test: 'Test %{title} completed'
+      correct_percent: 'You answered %{percent} questions correctly'
+      test_passed: 'Test passed'
+      test_flunked: 'Test flunked'
+    show:
+      header: 'Passing the test %{title}'
+      question_number: 'question %{q_number}/%{q_count}'
+      next: 'Next'
+  tests:
+    index:
+      all_tests: 'All tests'
+      test: 'Test'
+      actions: 'Actions'
+      questions: 'Questions'
+    test:
+      test_title: 'Test %{title}'
+      start: 'Start'

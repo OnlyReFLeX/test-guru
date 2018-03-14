@@ -1,8 +1,8 @@
-<%= link_to 'Все тесты', tests_path %> <br>
+<%= link_to t('.all_tests'), tests_path %> <br>
 
 <% if signed_in? %>
-  <p>Добро пожаловать <%= current_user.first_name %> в <%= link_to 'Guru', root_path %> | <%= link_to 'Выйти', destroy_user_session_path, method: :delete %></p>
+  <p><%= t('.welcome_in', name: current_user.first_name) %> <%= link_to 'Guru', root_path %> | <%= link_to t('exit'), destroy_user_session_path, method: :delete %></p>
 <% else %>
-  <%= link_to 'Регистрация' , new_user_registration_path %> |
-  <%= link_to 'Войти', new_user_session_path %>
+  <%= link_to t('sign_up'), new_user_registration_path %> |
+  <%= link_to t('login'), new_user_session_path %>
 <% end %>

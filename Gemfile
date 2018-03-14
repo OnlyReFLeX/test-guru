@@ -51,4 +51,8 @@ group :development do
   gem 'letter_opener', '~> 1.6'
 end
 
+# auth
 gem 'devise', '~> 4.4', '>= 4.4.1'
+
+# localize
+gem 'rails-i18n', '~> 5.1', '>= 5.1.1'
