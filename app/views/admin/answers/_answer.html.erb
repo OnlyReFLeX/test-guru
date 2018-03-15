@@ -1,6 +1,6 @@
 <li>
   <%= answer.body %><br>
-  <%= link_to 'Посмотреть', admin_answer_path(answer) %> |
-  <%= link_to 'Редактировать', edit_admin_answer_path(answer) %> |
-  <%= link_to 'Удалить', admin_answer_path(answer), method: :delete, data: { confirm: 'Вы уверены?' } %>
+  <%= link_to t('show'), admin_answer_path(answer) %> |
+  <%= link_to t('edit'), edit_admin_answer_path(answer) %> |
+  <%= link_to t('delete'), admin_answer_path(answer), method: :delete, data: { confirm: t('sure?') } %>
 </li>

@@ -1,7 +1,8 @@
 <tr>
-  <td><h3><%= "Тест #{test.title}(#{test.questions.count})" %></h3></td>
+  <td><h3><%= t('.test_title', title: test.title) %></h3></td>
+  <td><%= test.questions.count %></td>
   <td><%= test.author.full_name %></td>
-  <td><%= link_to 'Посмотреть', admin_test_path(test) %></td>
-  <td><%= link_to 'Редактировать', edit_admin_test_path(test) %></td>
-  <td><%= link_to 'Удалить', admin_test_path(test), method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+  <td><%= link_to t('show'), admin_test_path(test) %></td>
+  <td><%= link_to t('edit'), edit_admin_test_path(test) %></td>
+  <td><%= link_to t('delete'), admin_test_path(test), method: :delete, data: { confirm: t('sure?') } %></td>
 </tr>
