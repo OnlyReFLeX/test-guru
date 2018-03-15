@@ -9,9 +9,9 @@
         <%= link_to t('.all_tests'), tests_path, class: 'nav-link' %>
       </li>
       <% if admin? %>
-      <li class="nav-item">
-        <%= link_to t('.admin_panel'), admin_root_path, class: 'nav-link' %>
-      </li>
+        <li class="nav-item">
+          <%= link_to t('.admin_panel'), admin_root_path, class: 'nav-link' %>
+        </li>
       <% end %>
     </ul>
     <% if signed_in? %>

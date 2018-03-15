@@ -1,4 +1,6 @@
 module ApplicationHelper
+  ALERTS = { alert: 'danger', notice: 'primary' }.freeze
+
   def current_year
     Time.current.year
   end
@@ -7,8 +9,7 @@ module ApplicationHelper
     link_to repo, "https://github.com/#{author}/#{repo}", target: :blank
   end
 
-  def transfer_flash_alerts(key)
-    alerts = { alert: 'danger', notice: 'primary' }
-    alerts[key.to_sym] || key
+  def alert_manager(key)
+    ALERTS[key.to_sym] || key
   end
 end
