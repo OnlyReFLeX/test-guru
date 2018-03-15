@@ -7,9 +7,8 @@ module ApplicationHelper
     link_to repo, "https://github.com/#{author}/#{repo}", target: :blank
   end
 
-  def flash_message(message)
-    if flash[message]
-      content_tag :p, flash[:alert], class: 'flash alert'
-    end
+  def transfer_flash_alerts(key)
+    alerts = { alert: 'danger', notice: 'primary' }
+    alerts[key.to_sym] || key
   end
 end
