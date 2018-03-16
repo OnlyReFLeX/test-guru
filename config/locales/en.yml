@@ -90,6 +90,7 @@ en:
       header: 'Passing the test %{title}'
       question_number: 'question %{q_number}/%{q_count}'
       next: 'Next'
+      gist_question: 'Show at the gist'
     gist:
       failure: 'Error!, try again later'
   tests:

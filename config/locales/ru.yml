@@ -93,6 +93,7 @@ ru:
       header: 'Прохождение теста %{title}'
       question_number: 'вопрос %{q_number}/%{q_count}'
       next: 'Далее'
+      gist_question: 'Вывести на gist'
     gist:
       failure: 'Что-то пошло не так, попробуйте позже'
   tests:
