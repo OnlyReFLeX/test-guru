@@ -14,6 +14,7 @@ ru:
     navbar:
       all_tests: 'Все тесты'
       welcome_in: 'Добро пожаловать %{name} в'
+      admin_panel: 'Админ-Панель'
     admin:
       html_title: 'Админ Панель'
   activerecord:
@@ -30,6 +31,7 @@ ru:
       test:
         title: 'Название'
         category_id: 'Категория'
+        category: 'Категория'
       user:
         email: 'Почта'
         password: 'Пароль'

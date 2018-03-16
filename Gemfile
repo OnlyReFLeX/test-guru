@@ -56,3 +56,9 @@ gem 'devise', '~> 4.4', '>= 4.4.1'
 
 # localize
 gem 'rails-i18n', '~> 5.1', '>= 5.1.1'
+
+# jquery
+gem 'jquery-rails'
+
+# bootstrap
+gem 'bootstrap', '~> 4.0.0'

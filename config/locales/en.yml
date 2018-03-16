@@ -14,6 +14,7 @@ en:
     navbar:
       all_tests: 'All tests'
       welcome_in: 'Welcome %{name} in'
+      admin_panel: 'Admin-Panel'
     admin:
       html_title: 'Admin Panel'
   activerecord:
@@ -50,7 +51,7 @@ en:
     questions:
       form:
         header_new: 'Creating a new question for the test %{title}'
-        header_edit: 'Edit question for the test%{title}'
+        header_edit: 'Edit question for the test %{title}'
       show:
         header: 'Questions for test %{title}'
         answers: 'Answers'
