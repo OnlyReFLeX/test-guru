@@ -1,6 +1,4 @@
 class GitHubClient
-  ACCESS_TOKEN = ''
-
   def initialize
     @http_client = setup_http_client
   end
@@ -12,6 +10,6 @@ class GitHubClient
   private
 
   def setup_http_client
-    Octokit::Client.new(:access_token => ACCESS_TOKEN)
+    Octokit::Client.new(access_token: ENV['GITHUB_TOKEN'])
   end
 end
