@@ -3,7 +3,6 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   protect_from_forgery with: :exception
   before_action :set_locale
-  helper_method :admin?
 
   def default_url_options
     I18n.locale == I18n.default_locale ? {} : { lang: I18n.locale }
@@ -16,11 +15,7 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
-    resource.is_a?(Admin) ? admin_root_path : super
-  end
-
-  def admin?
-    current_user.is_a?(Admin)
+    resource.admin? ? admin_root_path : super
   end
 
   def set_locale
