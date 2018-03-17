@@ -8,6 +8,7 @@ en:
   exit: 'Exit'
   sign_up: 'Sign up'
   login: 'Sign in'
+  limit_max_answers: 'Answer limit reached'
   layouts:
     footer:
       info: 'Test project'

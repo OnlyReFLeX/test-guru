@@ -8,6 +8,7 @@ ru:
   exit: 'Выйти'
   sign_up: 'Регистрация'
   login: 'Войти'
+  limit_max_answers: 'Достигнут лимит ответов'
   layouts:
     footer:
       info: 'Проект прохождения тестов'
