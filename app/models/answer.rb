@@ -8,6 +8,6 @@ class Answer < ApplicationRecord
   private
 
   def validate_max_answers
-    errors.add(:base, 'Достигнут лимит ответов') if question.answers.count >= 4
+    errors.add(:base, I18n.t('.limit_max_answers')) if question.answers.count >= 4
   end
 end

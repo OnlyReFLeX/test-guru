@@ -62,3 +62,9 @@ gem 'jquery-rails'
 
 # bootstrap
 gem 'bootstrap', '~> 4.0.0'
+
+# networking
+gem "octokit", "~> 4.0"
+
+# dotenv
+gem 'dotenv-rails', '~> 2.2', '>= 2.2.1'

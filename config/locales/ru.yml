@@ -1,4 +1,5 @@
 ru:
+  gist_description: 'Вопрос о %{title}, из TestGuru'
   show: 'Посмотреть'
   edit: 'Редактировать'
   delete: 'Удалить'
@@ -7,6 +8,7 @@ ru:
   exit: 'Выйти'
   sign_up: 'Регистрация'
   login: 'Войти'
+  limit_max_answers: 'Достигнут лимит ответов'
   layouts:
     footer:
       info: 'Проект прохождения тестов'
@@ -92,6 +94,9 @@ ru:
       header: 'Прохождение теста %{title}'
       question_number: 'вопрос %{q_number}/%{q_count}'
       next: 'Далее'
+      gist_question: 'Вывести на gist'
+    gist:
+      failure: 'Что-то пошло не так, попробуйте позже'
   tests:
     index:
       all_tests: 'Все тесты'

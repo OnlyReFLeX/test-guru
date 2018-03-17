@@ -1,4 +1,5 @@
 en:
+  gist_description: 'A question about %{title} from TestGuru'
   show: 'Show'
   edit: 'Edit'
   delete: 'Delete'
@@ -7,6 +8,7 @@ en:
   exit: 'Exit'
   sign_up: 'Sign up'
   login: 'Sign in'
+  limit_max_answers: 'Answer limit reached'
   layouts:
     footer:
       info: 'Test project'
@@ -89,6 +91,9 @@ en:
       header: 'Passing the test %{title}'
       question_number: 'question %{q_number}/%{q_count}'
       next: 'Next'
+      gist_question: 'Show at the gist'
+    gist:
+      failure: 'Error!, try again later'
   tests:
     index:
       all_tests: 'All tests'
