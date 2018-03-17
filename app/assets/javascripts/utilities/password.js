@@ -4,7 +4,7 @@ document.addEventListener('turbolinks:load', function() {
   password_confirmation.addEventListener('input', equalPasswordConfirmation)
 })
 
-function equalPasswordConfirmation(password_confirmation) {
+function equalPasswordConfirmation() {
   var password = document.querySelector('#user_password')
   var password_confirmation = document.querySelector('#user_password_confirmation')
 
