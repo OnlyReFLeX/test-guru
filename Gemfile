@@ -68,3 +68,6 @@ gem "octokit", "~> 4.0"
 
 # dotenv
 gem 'dotenv-rails', '~> 2.2', '>= 2.2.1'
+
+# icons
+gem 'octicons_helper', '~> 4.2'
