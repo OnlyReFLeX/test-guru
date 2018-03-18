@@ -6,8 +6,8 @@ document.addEventListener('turbolinks:load', function() {
   if (errors) {
     var resourceId = errors.dataset.resourceId;
     formInlineHandler(resourceId);
-  }
-})
+  };
+});
 
 
 function formInlineLinkHandler(event) {
@@ -15,7 +15,7 @@ function formInlineLinkHandler(event) {
 
   var testId = this.dataset.testId;
   formInlineHandler(testId);
-}
+};
 
 function formInlineHandler(testId) {
   var link = document.querySelector('.form-inline-link[data-test-id="' + testId + '"]');
@@ -32,4 +32,4 @@ function formInlineHandler(testId) {
       link.textContent = 'Редактировать';
     };
   };
-}
+};
