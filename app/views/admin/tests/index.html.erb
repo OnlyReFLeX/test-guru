@@ -1,5 +1,6 @@
 <h1><%= t('.all_tests') %></h2>
 <%= link_to t('.new_test'), new_admin_test_path, class: 'btn btn-primary' %>
+<%= render 'shared/errors', resource: @test %>
 <table class="table table-bordered mt-2">
   <thead>
     <tr>

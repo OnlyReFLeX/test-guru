@@ -77,6 +77,8 @@ ru:
         question: 'Вопрос'
         actions: 'Действия'
         header: 'Тест %{title} (вопросов %{count_q})'
+      form_inline:
+        submit: 'OK'
   shared:
     errors:
       header:

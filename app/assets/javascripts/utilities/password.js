@@ -4,7 +4,7 @@ document.addEventListener('turbolinks:load', function() {
   if (passwordConfirmation) {
     passwordConfirmation.addEventListener('input', equalPasswordConfirmation);
   };
-})
+});
 
 function equalPasswordConfirmation() {
   var password = document.querySelector('#user_password');
@@ -25,5 +25,5 @@ function equalPasswordConfirmation() {
     passwordConfirmation.classList.add('border-danger');
     password.classList.remove('border-success');
     passwordConfirmation.classList.remove('border-success');
-  }
-}
+  };
+};
