@@ -4,17 +4,6 @@ Rails.application.configure do
   # Code is not reloaded between requests.
   config.cache_classes = true
 
-  config.action_mailer.default_url_options = { host: 'ref-test-guru.herokuapp.com' }
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = {
-    address:              'smtp.gmail.com',
-    port:                 587,
-    user_name:            ENV['SMTP_USERNAME'],
-    password:             ENV['SMTP_PASSWORD'],
-    authentication:       'plain',
-    enable_starttls_auto: true
-  }
-
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
   # and those relying on copy on write to perform better.
@@ -72,6 +61,16 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "test-guru_#{Rails.env}"
   config.action_mailer.perform_caching = false
+  config.action_mailer.default_url_options = { host: 'ref-test-guru.herokuapp.com' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:              'smtp.gmail.com',
+    port:                 587,
+    user_name:            ENV['SMTP_USERNAME'],
+    password:             ENV['SMTP_PASSWORD'],
+    authentication:       'plain',
+    enable_starttls_auto: true
+  }
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
