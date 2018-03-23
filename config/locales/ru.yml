@@ -13,6 +13,7 @@ ru:
     footer:
       info: 'Проект прохождения тестов'
       school_info: 'Учебный проект в онлайн-школе Thinknetica'
+      feedback: 'Обратная связь'
     navbar:
       all_tests: 'Все тесты'
       welcome_in: 'Добро пожаловать %{name} в'
@@ -38,6 +39,9 @@ ru:
         email: 'Почта'
         password: 'Пароль'
         remember_me: 'Запомнить меня'
+      feedback:
+        title: 'Заголовок'
+        body: 'Содержание'
   admin:
     navbar:
       all_tests: 'Все тесты'
@@ -108,3 +112,10 @@ ru:
     test:
       test_title: 'Тест %{title}'
       start: 'Старт'
+  feedbacks:
+    new:
+      header: 'Обратная связь'
+    form:
+      send_email: 'Отправить'
+    create:
+      success: 'Успешно отправлено'

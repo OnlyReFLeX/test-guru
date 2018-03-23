@@ -13,6 +13,7 @@ en:
     footer:
       info: 'Test project'
       school_info: 'Educational project in online-school Thinknetica'
+      feedback: 'Feed back'
     navbar:
       all_tests: 'All tests'
       welcome_in: 'Welcome %{name} in'
@@ -103,3 +104,10 @@ en:
     test:
       test_title: 'Test %{title}'
       start: 'Start'
+  feedbacks:
+    new:
+      header: 'Feed back'
+    form:
+      send_email: 'Send'
+    create:
+      success: 'Was successfully sent'

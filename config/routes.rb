@@ -5,6 +5,8 @@ Rails.application.routes.draw do
     sessions: 'users/sessions'
   }
 
+  resources :feedbacks, only: [:new, :create]
+
   resources :tests, only: :index do
     member do
       post :start
