@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  image: MyText
+  rule: 1
+  rule_parameter: MyString
+
+two:
+  name: MyString
+  image: MyText
+  rule: 1
+  rule_parameter: MyString
