@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   }
 
   resources :feedbacks, only: [:new, :create]
+  resources :badges, only: :index
 
   resources :tests, only: :index do
     member do
