@@ -11,6 +11,9 @@
       <li class="nav-item">
         <%= link_to 'Gists', admin_gists_path, class: 'nav-link' %>
       </li>
+      <li class="nav-item">
+        <%= link_to 'Badges', admin_badges_path, class: 'nav-link' %>
+      </li>
     </ul>
     <% if signed_in? %>
       <p><%= t('.welcome_in', name: current_user.first_name) %> <%= link_to 'Guru', root_path %> | <%= link_to t('exit'), destroy_user_session_path, method: :delete %></p>

@@ -19,10 +19,6 @@ class User < ApplicationRecord
   has_many :badge_users
   has_many :badges, through: :badge_users
 
-  def correct_test_passed
-
-  end
-
   def test_passage(test)
     test_passages.order(created_at: :desc).find_by(test_id: test.id)
   end
