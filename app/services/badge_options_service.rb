@@ -24,16 +24,18 @@ class BadgeOptionsService
   end
 
   def all_tests_category?(category)
-    if @test_passage.category.title = category
+    if @test_passage.test.category.title = category
       corrects_count = TestPassage.correct_passed_tests(@user)
                                   .pluck('DISTINCT test_id')
                                   .count
-      Category.find_by(title: category)&.tests&.count == corrects
+      Category.find_by(title: category)&.tests&.count == corrects_count
     end
   end
 
-  def test_first_try?(test)
-
+  def test_first_try?(test_title)
+    if @test_passage.test.title = test_title && @test_passage.passed
+      @user.tests.where(title: test_title).count == 1
+    end
   end
 
   def test_certaion_level?(level)
