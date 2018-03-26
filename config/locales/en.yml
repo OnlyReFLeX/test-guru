@@ -18,6 +18,7 @@ en:
       all_tests: 'All tests'
       welcome_in: 'Welcome %{name} in'
       admin_panel: 'Admin-Panel'
+      my_badges: 'My badges'
     admin:
       html_title: 'Admin Panel'
   activerecord:
@@ -25,7 +26,13 @@ en:
       answer: 'Answer'
       question: 'question'
       test: 'Test'
+      badge: 'Badge'
     attributes:
+      badge:
+        name: 'Name'
+        image: 'Badge'
+        rule: 'Rule'
+        rule_parameter: 'Value for rule'
       answer:
         body: 'Answer'
         correct: 'Correct'
@@ -39,9 +46,23 @@ en:
         password: 'Password'
         remember_me: 'Remember me'
   admin:
+    badges:
+      index:
+        all_badges: 'All badges'
+        new_badge: 'New badge'
+        image: 'Badge'
+        name: 'Name'
+        actions: 'Actions'
+      destroy:
+        success_destroy: 'Deletion of success was successful'
+      update:
+        success_update: 'Successfully updated'
+      create:
+        success_create: 'A new badge was created'
     navbar:
       all_tests: 'All tests'
       welcome_in: 'Welcome %{name} in'
+      badges: 'Badges'
     answers:
       show:
         correct: 'Correct'
@@ -111,3 +132,8 @@ en:
       send_email: 'Send'
     create:
       success: 'Was successfully sent'
+  badges:
+    index:
+      my_badges: 'My badges'
+      image: 'Badge'
+      name: 'Name'

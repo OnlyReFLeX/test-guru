@@ -18,6 +18,7 @@ ru:
       all_tests: 'Все тесты'
       welcome_in: 'Добро пожаловать %{name} в'
       admin_panel: 'Админ-Панель'
+      my_badges: 'Мои достижения'
     admin:
       html_title: 'Админ Панель'
   activerecord:
@@ -25,7 +26,13 @@ ru:
       answer: 'Ответ'
       question: 'Вопрос'
       test: 'Тест'
+      badge: 'Достижение'
     attributes:
+      badge:
+        name: 'Название'
+        image: 'Значок'
+        rule: 'Правило'
+        rule_parameter: 'Значение для правила'
       answer:
         body: 'Ответ'
         correct: 'Правильный'
@@ -43,9 +50,23 @@ ru:
         title: 'Заголовок'
         body: 'Содержание'
   admin:
+    badges:
+      index:
+        all_badges: 'Все достижения'
+        new_badge: 'Новое достижение'
+        image: 'Значок'
+        name: 'Название'
+        actions: 'Действия'
+      destroy:
+        success_destroy: 'Удаление достижения прошло успешно'
+      update:
+        success_update: 'Достижение успешно обновлено'
+      create:
+        success_create: 'Новое достижение было создано'
     navbar:
       all_tests: 'Все тесты'
       welcome_in: 'Добро пожаловать %{name} в'
+      badges: 'Достижения'
     answers:
       show:
         correct: 'Правильный'
@@ -119,3 +140,8 @@ ru:
       send_email: 'Отправить'
     create:
       success: 'Успешно отправлено'
+  badges:
+    index:
+      my_badges: 'Мои достижения'
+      image: 'Значок'
+      name: 'Название'
