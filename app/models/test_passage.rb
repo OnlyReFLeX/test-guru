@@ -4,6 +4,11 @@ class TestPassage < ApplicationRecord
   belongs_to :current_question, class_name: 'Question', optional: true
 
   before_save :before_save_set_question
+  before_update :before_update_test_passed
+
+  scope :correct_passed_tests, ->(user) {
+    user.test_passages.where(passed: true)
+  }
 
   def test_passed?
     result_percent >= 85
@@ -28,8 +33,12 @@ class TestPassage < ApplicationRecord
 
   private
 
+  def before_update_test_passed
+    self.passed = test_passed? if completed?
+  end
+
   def before_save_set_question
-    self.current_question = if self.current_question.nil?
+    self.current_question = if completed?
                               test.questions.first
                             else
                               next_question
