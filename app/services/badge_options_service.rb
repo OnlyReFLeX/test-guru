@@ -5,13 +5,13 @@ class BadgeOptionsService
   end
 
   def call
-    Badge.all.each do |badge|
+    Badge.find_each do |badge|
       case badge.rule
-      when 1
+      when '1'
         add_badge!(badge) if all_tests_category?(badge.rule_parameter)
-      when 2
+      when '2'
         add_badge!(badge) if test_first_try?(badge.rule_parameter)
-      when 3
+      when '3'
         add_badge!(badge) if test_certaion_level?(badge.rule_parameter.to_i)
       end
     end
@@ -39,8 +39,6 @@ class BadgeOptionsService
   end
 
   def test_certaion_level?(level)
-    if @test_passage.passed
-      @test_passage.test.level == level
-    end
+    @test_passage.test.level == level if @test_passage.passed
   end
 end

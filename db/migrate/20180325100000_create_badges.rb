@@ -3,7 +3,7 @@ class CreateBadges < ActiveRecord::Migration[5.1]
     create_table :badges do |t|
       t.string :name
       t.text :image
-      t.integer :rule
+      t.string :rule
       t.string :rule_parameter
 
       t.timestamps

@@ -34,9 +34,7 @@ class TestPassage < ApplicationRecord
   private
 
   def before_update_test_passed
-    if completed?
-      self.passed = test_passed? ? true : false
-    end
+    self.passed = test_passed? if completed?
   end
 
   def before_save_set_question
