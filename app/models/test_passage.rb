@@ -34,6 +34,10 @@ class TestPassage < ApplicationRecord
     test.questions.count - next_questions.count
   end
 
+  def timer_seconds
+    ((created_at + test.timeleft.minutes) - Time.now).to_i
+  end
+
   private
 
   def time_is_over?
