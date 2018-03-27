@@ -4,6 +4,7 @@ class TestPassage < ApplicationRecord
   belongs_to :current_question, class_name: 'Question', optional: true
 
   before_save :before_save_set_question
+  before_update :before_update_check_timeleft
   before_update :before_update_test_passed
 
   scope :correct_passed_tests, ->(user) {
@@ -15,7 +16,7 @@ class TestPassage < ApplicationRecord
   end
 
   def result_percent
-    (100 * self.correct_questions) / test.questions.count
+    (100 * correct_questions) / test.questions.count
   end
 
   def completed?
@@ -23,7 +24,9 @@ class TestPassage < ApplicationRecord
   end
 
   def accept!(answer_ids)
-    self.correct_questions += 1 if correct_answer?(answer_ids)
+    unless time_is_over?
+      self.correct_questions += 1 if correct_answer?(answer_ids)
+    end
     save!
   end
 
@@ -32,6 +35,14 @@ class TestPassage < ApplicationRecord
   end
 
   private
+
+  def time_is_over?
+    (created_at + test.timeleft.minutes) < Time.now
+  end
+
+  def before_update_check_timeleft
+    self.current_question = nil if time_is_over?
+  end
 
   def before_update_test_passed
     self.passed = test_passed? if completed?
