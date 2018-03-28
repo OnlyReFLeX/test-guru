@@ -13,7 +13,7 @@
 </div>
 
 <div>
-  Осталось времени: <%= content_tag :span, class: 'timer', data: {timeleft: @test_passage.timer_seconds} {} %>
+  Осталось времени: <%= content_tag :span, '', class: 'timer', data: {timeleft: @test_passage.timer_seconds} %>
 </div>
 
 <%= form_with url: test_passage_path(@test_passage), local: true, method: :put do |form| %>

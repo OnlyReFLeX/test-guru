@@ -35,13 +35,17 @@ class TestPassage < ApplicationRecord
   end
 
   def timer_seconds
-    ((created_at + test.timeleft.minutes) - Time.now).to_i
+    (expires_at - Time.now).to_i
   end
 
   private
 
+  def expires_at
+    created_at + test.timeleft.minutes
+  end
+
   def time_is_over?
-    (created_at + test.timeleft.minutes) < Time.now
+    expires_at < Time.now
   end
 
   def before_update_check_timeleft
