@@ -12,6 +12,16 @@
         </p>
 
         <p>
+          <%= form.label :level %>
+          <%= form.number_field :level, class: 'form-control' %>
+        </p>
+
+        <p>
+          <%= form.label :timeleft %>
+          <%= form.number_field :timeleft, class: 'form-control' %>
+        </p>
+
+        <p>
         <%= form.label :category_id %>
         <%= form.collection_select :category_id, Category.all, :id, :title, { prompt: true }, { class: 'form-control' } %>
         </p>
