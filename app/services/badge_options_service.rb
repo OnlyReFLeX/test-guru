@@ -6,14 +6,7 @@ class BadgeOptionsService
 
   def call
     Badge.find_each do |badge|
-      case badge.rule
-      when '1'
-        add_badge!(badge) if all_tests_category?(badge.rule_parameter)
-      when '2'
-        add_badge!(badge) if test_first_try?(badge.rule_parameter)
-      when '3'
-        add_badge!(badge) if test_certaion_level?(badge.rule_parameter.to_i)
-      end
+      add_badge!(badge) if send("rule_#{badge.rule}?", badge.rule_parameter)
     end
   end
 
@@ -23,7 +16,8 @@ class BadgeOptionsService
     @user.badges << badge
   end
 
-  def all_tests_category?(category)
+  def rule_1?(category)
+    # all tests category?
     if @test_passage.test.category.title == category
       corrects_count = TestPassage.correct_passed_tests(@user)
                                   .pluck('DISTINCT test_id')
@@ -32,13 +26,15 @@ class BadgeOptionsService
     end
   end
 
-  def test_first_try?(test_title)
+  def rule_2?(test_title)
+    # test first try?
     if @test_passage.test.title == test_title && @test_passage.passed
       @user.tests.where(title: test_title).count == 1
     end
   end
 
-  def test_certaion_level?(level)
-    @test_passage.test.level == level if @test_passage.passed
+  def rule_3?(level)
+    # test certaion level?
+    @test_passage.test.level == level.to_i if @test_passage.passed
   end
 end
